@@ -5,7 +5,25 @@ const path = require('path')
 let cesiumSource = './node_modules/cesium/Source'
 let cesiumWorkers = '../Build/Cesium/Workers'
 
+function resolve (dir) {
+    return path.join(__dirname, dir)
+}
+
 module.exports = {
+    css: {
+        loaderOptions: {
+            sass: {
+                prependData: `@import 'assets/css/public.scss';`    // scss全局变量
+            }
+        }
+    },
+    chainWebpack: config => {
+        // 路径别名
+        config.resolve.alias
+            .set('@', resolve('src'))
+            .set('components', resolve('src/components'))
+            .set('assets', resolve('src/assets'))
+    },
     // 以下1-6均为 cesium + vue 必须配置
     configureWebpack: {
         output: {

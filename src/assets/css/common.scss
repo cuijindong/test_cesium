@@ -1,0 +1,30 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.cesium-viewer-bottom{
+    display: none !important;
+}
+.cesium-viewer-toolbar{
+    bottom: 34px !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column;
+}
+.cesium-sceneModePicker-wrapper{
+    margin: 0 0 5px 0!important;
+}
+.cesium-baseLayerPicker-dropDown{
+    bottom: 0 !important;
+    right: 45px !important;
+}
+.cesium-button{
+    margin: 0 !important;
+}
+.cesium-viewer-fullscreenContainer{
+    right: 5px !important;
+    width: 32px !important;
+    height: 32px !important;
+}
